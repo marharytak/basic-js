@@ -1,5 +1,3 @@
-const { NotImplementedError } = require('../extensions/index.js');
-
 /**
  * Given a string, return its encoding version.
  *
@@ -11,8 +9,18 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function encodeLine(str) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  let counter = 1;
+  let res = '';
+  str = str.split('');
+  str.forEach((char, index) => {
+    if (char === str[index + 1]) {
+      counter++;
+    } else {
+      res += counter > 1 ? `${counter}${char}` : char;
+      counter = 1;
+    }
+  });
+  return res;
 }
 
 module.exports = {

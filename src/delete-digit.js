@@ -9,17 +9,6 @@
  * For n = 152, the output should be 52
  *
  */
-// function deleteDigit(n) {
-//   const str = n.toString();
-//   let max = Number(str.substring(1, str.length));
-
-//   for (let i = 1; i <= str.length; i++) {
-//     let curr = Number(str.substring(0, i - 1) + str.substring(i));
-//     if (curr > max) { max = curr; }
-//   }
-
-//   return max;
-// }
 
 function deleteDigit(n) {
   const str = n.toString();

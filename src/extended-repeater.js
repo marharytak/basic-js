@@ -1,5 +1,3 @@
-const { NotImplementedError } = require('../extensions/index.js');
-
 /**
  * Create a repeating string based on the given parameters
  *  
@@ -16,7 +14,13 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function repeater(str, options) {
-  throw new NotImplementedError('Not implemented');
+
+  if (options.hasOwnProperty('addition')) {
+    str += (options.addition + (options.additionSeparator ? options.additionSeparator : '|'))
+      .repeat(options.additionRepeatTimes - 1) + options.addition;
+  }
+
+  return (str + (options.separator ? options.separator : '+')).repeat(options.repeatTimes - 1) + str;
 }
 
 module.exports = {

@@ -13,8 +13,9 @@
  *
  */
 function isMAC48Address(n) {
-  if (n.split('-').length !== 6) { return false; }
-  return n.split('-').every(item => /([0-9]{2}|[A-F]{2}|[0-9]{1}[A-F]{1}|[A-F]{1}[0-9]{1})/.test(item));
+  n = n.split('-');
+  if (n.length !== 6) { return false; }
+  return n.every(item => /([0-9]{2}|[A-F]{2}|[0-9]{1}[A-F]{1}|[A-F]{1}[0-9]{1})/.test(item));
 }
 module.exports = {
   isMAC48Address

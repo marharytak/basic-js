@@ -10,7 +10,7 @@
  * 
  */
 function getSeason(date) {
-  if (!date) { return 'Unable to determine the time of year!' }
+  if (!date) { return 'Unable to determine the time of year!'; }
   try {
     date.getUTCDate()
   } catch (error) {
